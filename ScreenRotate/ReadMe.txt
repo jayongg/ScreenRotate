@@ -1,0 +1,1 @@
+Rotates the screen if the graphics driver supports it.
