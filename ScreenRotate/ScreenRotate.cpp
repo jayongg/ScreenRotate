@@ -15,8 +15,8 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
 	LPCTSTR pszCurrent = L"TBD";
 
-	// increment the orientation
 	// determine new orientaion
+	// toggle between one pair of portrait/landscape
 	switch (devmode.dmDisplayOrientation)
 	{
 	case DMDO_DEFAULT:
@@ -25,7 +25,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 		break;
 	case DMDO_270:
 		pszCurrent = L"270";
-		devmode.dmDisplayOrientation = DMDO_180;
+		devmode.dmDisplayOrientation = DMDO_DEFAULT;
 		break;
 	case DMDO_180:
 		pszCurrent = L"180";
@@ -33,7 +33,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 		break;
 	case DMDO_90:
 		pszCurrent = L"90";
-		devmode.dmDisplayOrientation = DMDO_DEFAULT;
+		devmode.dmDisplayOrientation = DMDO_180;
 		break;
 	default:
 		// unknown orientation value
